@@ -3,7 +3,7 @@
 
 #########################
 
-use Test::More tests => 10;
+use Test::More tests => 12;
 BEGIN { use_ok('Net::RULI'); };
 
 #########################
@@ -65,4 +65,10 @@ ok(ref($srv_list_ref));
 &dump_srv_list("ruli_sync_smtp_query: domain=$domain\n", 
 	       $srv_list_ref);
 
+$domain = "registro.br";
+$srv_list_ref = Net::RULI::ruli_sync_http_query($domain, -1, 0);
+ok(defined($srv_list_ref));
+ok(ref($srv_list_ref));
+&dump_srv_list("ruli_sync_http_query: domain=$domain\n",
+               $srv_list_ref);
 

@@ -1,4 +1,4 @@
-Perl binding for RULI version 0.02
+Perl binding for RULI version 0.03
 ==================================
 
 DEPENDENCIES
@@ -9,6 +9,8 @@ This module requires these other modules and libraries:
   http://www.nongnu.org/ruli/
 
 Please install the RULI library before installing this module.
+
+You'll need RULI 0.32 or higher.
 
 
 INSTALLATION
@@ -28,7 +30,13 @@ USAGE
 
 EXAMPLES
 
-  See the directory "examples" for basic programs using this module.
+  See the directory "examples" for basic programs using this module:
+
+   ./examples/ruli-sync-smtp.pl registro.br
+
+   ./examples/ruli-sync-http.pl registro.br
+
+   ./examples/ruli-sync-srv.pl _sip._tcp gnu.org
 
 
 COPYRIGHT AND LICENCE

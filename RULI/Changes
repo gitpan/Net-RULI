@@ -7,3 +7,6 @@ Revision history for Perl extension RULI.
 0.02  Fri Sep 24 01:02:59 2004
 	- moved to namespace Net::RULI
 
+0.03  Tue Oct 12 03:01:44 2004
+	- http-specific support
+

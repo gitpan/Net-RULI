@@ -27,7 +27,7 @@ our @EXPORT = qw(
 	
 );
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub AUTOLOAD {
     # This AUTOLOAD is used to 'autoload' constants from the constant()
@@ -77,6 +77,8 @@ my $srv_list_ref = Net::RULI::ruli_sync_query($service, $domain,
 
 my $srv_list_ref = Net::RULI::ruli_sync_smtp_query($domain, $options);
 
+my $srv_list_ref = Net::RULI::ruli_sync_http_query($domain, $force_port, $options);
+
 =head1 DESCRIPTION
 
 RULI performs DNS queries for SRV records. The result is a
@@ -92,6 +94,10 @@ This function performs a query for a generic service:
 This function performs a query for the SMTP service:
 
   my $srv_list_ref = Net::RULI::ruli_sync_smtp_query($domain, $options);
+
+This function performs a query for the HTTP service:
+
+  my $srv_list_ref = Net::RULI::ruli_sync_http_query($domain, $force_port, $options);
 
 The $options field is currently unused and should be set to 0 (zero).
 
@@ -113,7 +119,13 @@ This example submits a specific query for SMTP.
 
   my $srv_list_ref = Net::RULI::ruli_sync_smtp_query("bogus.tld", 0);
 
-=head2 Example 3
+=head2 Example 3 
+
+This example submits a specific query for HTTP.
+
+  my $srv_list_ref = Net::RULI::ruli_sync_http_query("bogus.tld", -1, 0);
+
+=head2 Example 4
 
 This example scans the list of SRV records returned by successful
 calls to RULI functions.
